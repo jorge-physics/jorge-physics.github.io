@@ -211,7 +211,7 @@
       }, 500); // Wait for fade-out to complete
     }
 
-    // Function to update oscillator frequencies and phases based on sliders
+    // Function to update oscillator frequencies based on sliders
     function updateOscillators() {
       let lambda = wavelengthSlider.value();
       let A = amplitudeSlider.value();
@@ -222,11 +222,11 @@
       let f1 = v / lambda;
       let f2 = v / 5; // Wave 2 frequency is fixed based on initial wavelength (lambda = 5)
 
-      // Update oscillator frequencies and phases
+      // Update oscillator frequencies
       osc1.freq(f1);
-      // osc1.phase(phi1); // Removed: p5.Oscillator does not support phase()
+      // Removed: osc1.phase(phi1); // p5.Oscillator does not support phase()
       osc2.freq(f2);
-      // osc2.phase(PI / 2); // Removed: p5.Oscillator does not support phase()
+      // Removed: osc2.phase(PI / 2); // p5.Oscillator does not support phase()
     }
 
     // Helper function to generate linearly spaced array
