@@ -1,4 +1,3 @@
-# jorge-physics.github.io
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -187,8 +186,8 @@
       // Update oscillator parameters based on sliders
       updateOscillators();
 
-      // Fade in amplitude
-      osc1.amp(amplitudeSlider.value() * 0.1, 0.5); // Fade in over 0.5 seconds
+      // Fade in amplitude over 0.5 seconds
+      osc1.amp(amplitudeSlider.value() * 0.1, 0.5); // Wave 1
       osc2.amp(1 * 0.1, 0.5); // Wave 2 has fixed amplitude
 
       isPlaying = true;
@@ -200,9 +199,9 @@
         return; // Not playing
       }
 
-      // Fade out amplitude
-      osc1.amp(0, 0.5); // Fade out over 0.5 seconds
-      osc2.amp(0, 0.5); // Fade out over 0.5 seconds
+      // Fade out amplitude over 0.5 seconds
+      osc1.amp(0, 0.5); // Wave 1
+      osc2.amp(0, 0.5); // Wave 2
 
       // After fade-out, stop oscillators
       setTimeout(() => {
@@ -225,9 +224,9 @@
 
       // Update oscillator frequencies and phases
       osc1.freq(f1);
-      osc1.phase(phi1);
+      // osc1.phase(phi1); // Removed: p5.Oscillator does not support phase()
       osc2.freq(f2);
-      osc2.phase(PI / 2); // Wave 2 has fixed phase
+      // osc2.phase(PI / 2); // Removed: p5.Oscillator does not support phase()
     }
 
     // Helper function to generate linearly spaced array
